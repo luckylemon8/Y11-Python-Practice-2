@@ -7,9 +7,18 @@ from testhelper import test
 # "__e _ui__ __o__ _o_ _u__e_ o_e_ __e _a__ _o_"
 
 def sentence_word_blanker(sentence):
-    return "_" # Replace with your solution
+    consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"}
 
-### TESTS - Run the code that calls the function to check it works.
+    result = []
+    
+    for character in sentence:
+        if character in consonants:
+            result += "_"
+        else:
+            result += character
+
+    return result 
+
 test("Sudoku box checker 1","aeiou", 
     sentence_word_blanker("aeiou"))
 
