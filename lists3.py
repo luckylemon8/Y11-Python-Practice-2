@@ -1,6 +1,6 @@
 from testhelper import test
 
-def sudoku_box_checker(box):
+def sudoku_box_checker_dillon(box):
     numbers = set()
     
     for row in box:
@@ -8,6 +8,16 @@ def sudoku_box_checker(box):
             numbers.add(num)
     
     return numbers == {1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+def sudoku_box_checker(box):
+    numbers = []
+    
+    for row in box:
+        for num in row:
+            numbers.append(num)
+    numbers.sort()
+    print(numbers)
+    return numbers == [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 test("Sudoku box checker 1", True, sudoku_box_checker([[1,2,3], [4,5,6], [7,8,9]]))
 test("Sudoku box checker 2", True, sudoku_box_checker([[1,3,2], [9,8,7], [5,6,4]]))

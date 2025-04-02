@@ -16,8 +16,8 @@ def sentence_word_blanker(sentence):
             result += "_"
         else:
             result += character
-
-    return result 
+    print("".join(result))
+    return "".join(result) 
 
 test("Sudoku box checker 1","aeiou", 
     sentence_word_blanker("aeiou"))
